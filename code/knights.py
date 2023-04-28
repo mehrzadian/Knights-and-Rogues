@@ -43,3 +43,16 @@ def seq(n):
 ls=seq(n)
 for i in range(n):
     print(ls[i])
+
+def find_honest(seq):
+    ls=[]
+    for i in range(0,len(seq)//2,2):
+        p1 = seq[i]
+        p2 = seq[i+1]
+        if p1.ishonest(p2) and p2.ishonest(p1):
+            ls.append(p1)
+    if len(ls)==0:
+        return seq[-1]
+    return find_honest(ls)
+honest = find_honest(ls)
+print("\n\n", honest, "\n\n")
