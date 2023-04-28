@@ -17,7 +17,7 @@ class Person:
     def __str__(self):
         return str(self.honesty)+"-"+str(self.id)
         
-import random
+
      
 n = int(input())
 def seq(n):
