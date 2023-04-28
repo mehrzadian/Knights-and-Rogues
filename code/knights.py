@@ -46,7 +46,7 @@ for i in range(n):
 
 def find_honest(seq):
     ls=[]
-    for i in range(0,len(seq)//2,2):
+    for i in range(0,len(seq)-1,2):
         p1 = seq[i]
         p2 = seq[i+1]
         if p1.ishonest(p2) and p2.ishonest(p1):
@@ -55,4 +55,11 @@ def find_honest(seq):
         return seq[-1]
     return find_honest(ls)
 honest = find_honest(ls)
-print("\n\n", honest, "\n\n")
+print("\nThe first honest person that we found is:\n", honest, "\n")
+
+def print_honests(seq,honest):
+    for person in seq:
+        if honest.ishonest(person):
+            print(person)
+print("All of the honests in sequence:")
+print_honests(ls,honest)
